@@ -63,13 +63,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ==========================================
-    // THEME TOGGLE (silver / abyss)
+    // THEME TOGGLE (silver / navy-dark)
     // ==========================================
     const root = document.documentElement;
     const themeToggle = document.getElementById('theme-toggle');
 
     const LIGHT_THEME = 'silver';
-    const DARK_THEME = 'abyss';
+    const DARK_THEME = 'navy-dark';
 
     // Odczytaj zapisany stan
     let toggleState = localStorage.getItem('toggleState') || 'light';
