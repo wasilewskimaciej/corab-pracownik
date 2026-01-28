@@ -44,3 +44,7 @@ logs/
 *.zip
 *.tar.gz
 *.rar
+
+# Deployment instructions (not needed in repo)
+INSTRUKCJA_DLA_SIECIOWCA.md
+JAK_WDROZYC.md
