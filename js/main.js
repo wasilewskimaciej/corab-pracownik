@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const root = document.documentElement;
 
     // Zapisane motywy dla light/dark mode
-    let lightTheme = localStorage.getItem('lightTheme') || 'light';
-    let darkTheme = localStorage.getItem('darkTheme') || 'dark';
+    let lightTheme = localStorage.getItem('lightTheme') || 'silver';
+    let darkTheme = localStorage.getItem('darkTheme') || 'abyss';
 
     // Obecny wybrany motyw (dla pickera)
     let currentSelectedTheme = localStorage.getItem('theme') || lightTheme;
@@ -148,12 +148,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (themeToggle) {
         themeToggle.addEventListener('click', function() {
-            // Przełącz tylko ikonę (bez zmiany motywu)
+            // Przełącz stan i motyw
             toggleState = toggleState === 'light' ? 'dark' : 'light';
             localStorage.setItem('toggleState', toggleState);
+
+            // Zmień motyw na odpowiedni dla light/dark mode
+            const newTheme = toggleState === 'light' ? lightTheme : darkTheme;
+            currentSelectedTheme = newTheme;
+            localStorage.setItem('theme', newTheme);
+
+            if (newTheme === 'light') {
+                root.removeAttribute('data-theme');
+            } else {
+                root.setAttribute('data-theme', newTheme);
+            }
+
             updateToggleIcon();
 
-            console.log('Przycisk toggle zmieniony na:', toggleState === 'light' ? '☀️ słońce' : '🌙 księżyc');
+            // Zaktualizuj aktywny przycisk w pickerze (jeśli istnieje)
+            themeButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.theme === newTheme);
+            });
+
+            console.log('Przełączono na:', toggleState === 'light' ? `☀️ ${lightTheme}` : `🌙 ${darkTheme}`);
         });
     }
 
