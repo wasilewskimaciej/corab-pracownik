@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal pracownika Corab - wybierz sposób logowania">
+    <title>Portal Pracownika - Corab</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <h1 class="title">Portal Pracownika Corab</h1>
+            <p class="subtitle">Wybierz sposób logowania odpowiedni dla Twojego konta</p>
+        </header>
+
+        <section class="buttons-section">
+            <!-- Przycisk dla pracowników z kontem Microsoft -->
+            <a href="#"
+               id="btn-microsoft"
+               class="btn btn-microsoft"
+               role="button"
+               aria-label="Zaloguj się z kontem Microsoft">
+                <div class="btn-title">Pracownik z kontem Microsoft</div>
+                <div class="btn-description">Jeśli masz konto domenowe @corab.com.pl</div>
+            </a>
+
+            <!-- Przycisk dla pracowników bez konta Microsoft -->
+            <!-- TODO: Uzupełnić URL po otrzymaniu od administratora -->
+            <a href="#"
+               id="btn-non-microsoft"
+               class="btn btn-secondary"
+               role="button"
+               aria-label="Zaloguj się bez konta Microsoft">
+                <div class="btn-title">Pracownik bez konta Microsoft</div>
+                <div class="btn-description">Jeśli nie masz konta domenowego</div>
+            </a>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 Corab</p>
+        </footer>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+/* ==========================================
+   CSS Custom Properties (Variables)
+   ========================================== */
+:root {
+    /* Light Mode (default) */
+    --bg-gradient-start: #f0f4f8;
+    --bg-gradient-end: #e0e7ef;
+    --container-bg: #ffffff;
+    --container-shadow: rgba(0, 0, 0, 0.1);
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --border-color: #e2e8f0;
+    --focus-ring: rgba(66, 153, 225, 0.3);
+
+    /* Button colors (same for both modes) */
+    --btn-microsoft-bg: #0078D4;
+    --btn-microsoft-hover: #005A9E;
+    --btn-microsoft-shadow: rgba(0, 120, 212, 0.3);
+    --btn-microsoft-shadow-hover: rgba(0, 120, 212, 0.4);
+
+    --btn-secondary-bg: #4a5568;
+    --btn-secondary-hover: #2d3748;
+    --btn-secondary-shadow: rgba(74, 85, 104, 0.25);
+    --btn-secondary-shadow-hover: rgba(74, 85, 104, 0.35);
+}
+
+/* ==========================================
+   Dark Mode
+   ========================================== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-gradient-start: #1a202c;
+        --bg-gradient-end: #2d3748;
+        --container-bg: #2d3748;
+        --container-shadow: rgba(0, 0, 0, 0.4);
+        --text-primary: #f7fafc;
+        --text-secondary: #a0aec0;
+        --border-color: #4a5568;
+        --focus-ring: rgba(99, 179, 237, 0.4);
+
+        /* Slightly brighter buttons in dark mode */
+        --btn-microsoft-bg: #2b88d8;
+        --btn-microsoft-hover: #0078D4;
+        --btn-microsoft-shadow: rgba(43, 136, 216, 0.4);
+        --btn-microsoft-shadow-hover: rgba(43, 136, 216, 0.5);
+
+        --btn-secondary-bg: #5a6778;
+        --btn-secondary-hover: #6b7a8f;
+        --btn-secondary-shadow: rgba(90, 103, 120, 0.3);
+        --btn-secondary-shadow-hover: rgba(90, 103, 120, 0.4);
+    }
+}
+
+/* ==========================================
+   Reset & Base Styles
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ==========================================
+   Container
+   ========================================== */
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: var(--container-bg);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px var(--container-shadow);
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ==========================================
+   Header
+   ========================================== */
+.header {
+    margin-bottom: 2.5rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 400px;
+    margin: 0 auto;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   Buttons Section
+   ========================================== */
+.buttons-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+
+/* ==========================================
+   Button Styles
+   ========================================== */
+.btn {
+    display: block;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.btn-description {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    font-weight: 400;
+}
+
+/* Microsoft Button (Primary) */
+.btn-microsoft {
+    background-color: var(--btn-microsoft-bg);
+    color: #ffffff;
+    box-shadow: 0 4px 12px var(--btn-microsoft-shadow);
+}
+
+.btn-microsoft:hover {
+    background-color: var(--btn-microsoft-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--btn-microsoft-shadow-hover);
+}
+
+.btn-microsoft:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px var(--btn-microsoft-shadow);
+}
+
+/* Secondary Button (Non-Microsoft) */
+.btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: #ffffff;
+    box-shadow: 0 4px 12px var(--btn-secondary-shadow);
+}
+
+.btn-secondary:hover {
+    background-color: var(--btn-secondary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--btn-secondary-shadow-hover);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px var(--btn-secondary-shadow);
+}
+
+/* Focus states for accessibility (keyboard navigation) */
+.btn:focus {
+    outline: none;
+    border-color: var(--border-color);
+    box-shadow: 0 0 0 4px var(--focus-ring);
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+.footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    transition: border-color 0.3s ease;
+}
+
+.footer p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem 1.5rem;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        padding: 1.25rem 1.5rem;
+        min-height: 100px;
+    }
+
+    .btn-title {
+        font-size: 1.125rem;
+    }
+
+    .btn-description {
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+    }
+
+    .container {
+        padding: 1.5rem 1rem;
+        border-radius: 12px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .header {
+        margin-bottom: 2rem;
+    }
+
+    .buttons-section {
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .btn {
+        padding: 1rem 1.25rem;
+        min-height: 90px;
+    }
+
+    .btn-title {
+        font-size: 1rem;
+    }
+
+    .btn-description {
+        font-size: 0.8rem;
+    }
+}
+
+/* ==========================================
+   Print Styles
+   ========================================== */
+@media print {
+    body {
+        background: white;
+        color: #000;
+    }
+
+    .container {
+        box-shadow: none;
+        border: 1px solid #e2e8f0;
+        background: white;
+    }
+}
+
+/* ==========================================
+   High Contrast Mode Support
+   ========================================== */
+@media (prefers-contrast: high) {
+    .btn {
+        border: 2px solid currentColor;
+    }
+
+    .btn-microsoft {
+        background-color: #005A9E;
+    }
+
+    .btn-secondary {
+        background-color: #2d3748;
+    }
+}
+
+/* ==========================================
+   Reduced Motion Support (Accessibility)
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+
+    .btn:hover {
+        transform: none;
+    }
+}
