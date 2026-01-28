@@ -92,6 +92,20 @@
 }
 
 /* ==========================================
+   Animations
+   ========================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
    Reset & Base Styles
    ========================================== */
 * {
@@ -142,12 +156,32 @@ body {
     margin-bottom: 2.5rem;
 }
 
+.logo {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 1rem;
+    transition: filter 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Invert logo colors in dark mode (red stays visible) */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .logo {
+        filter: brightness(1.1);
+    }
+}
+
+:root[data-theme="dark"] .logo {
+    filter: brightness(1.1);
+}
+
 .title {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 0.75rem;
     transition: color 0.3s ease;
+    animation: fadeInUp 0.6s ease-out 0.1s both;
 }
 
 .subtitle {
@@ -157,6 +191,7 @@ body {
     max-width: 400px;
     margin: 0 auto;
     transition: color 0.3s ease;
+    animation: fadeInUp 0.6s ease-out 0.2s both;
 }
 
 /* ==========================================
@@ -173,7 +208,7 @@ body {
    Button Styles
    ========================================== */
 .btn {
-    display: block;
+    display: flex;
     padding: 1.5rem 2rem;
     border-radius: 12px;
     text-decoration: none;
@@ -182,21 +217,39 @@ body {
     border: 2px solid transparent;
     position: relative;
     overflow: hidden;
-    min-height: 110px;
+    min-height: 100px;
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.btn:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.btn-content {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.btn-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.btn-text {
+    text-align: left;
 }
 
 .btn-title {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .btn-description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     opacity: 0.85;
     font-weight: 400;
 }
@@ -315,8 +368,12 @@ body {
         padding: 2rem 1.5rem;
     }
 
+    .logo {
+        max-width: 150px;
+    }
+
     .title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 
     .subtitle {
@@ -325,15 +382,20 @@ body {
 
     .btn {
         padding: 1.25rem 1.5rem;
-        min-height: 100px;
+        min-height: 90px;
+    }
+
+    .btn-icon {
+        width: 36px;
+        height: 36px;
     }
 
     .btn-title {
-        font-size: 1.125rem;
+        font-size: 1.05rem;
     }
 
     .btn-description {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 }
 
@@ -348,8 +410,12 @@ body {
         border-radius: 12px;
     }
 
+    .logo {
+        max-width: 130px;
+    }
+
     .title {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
     }
 
     .subtitle {
@@ -366,16 +432,25 @@ body {
     }
 
     .btn {
-        padding: 1rem 1.25rem;
-        min-height: 90px;
+        padding: 1rem 1rem;
+        min-height: 80px;
+    }
+
+    .btn-content {
+        gap: 0.75rem;
+    }
+
+    .btn-icon {
+        width: 32px;
+        height: 32px;
     }
 
     .btn-title {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .btn-description {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 }
 
