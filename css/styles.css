@@ -10,7 +10,7 @@
     --text-primary: #2d3748;
     --text-secondary: #718096;
     --border-color: #e2e8f0;
-    --focus-ring: rgba(66, 153, 225, 0.3);
+    --focus-ring: rgba(66, 153, 225, 0.5);
 
     /* Button colors */
     --btn-microsoft-bg: #0078D4;
@@ -41,8 +41,8 @@
     --border-color: #cbd5e0;
     --focus-ring: rgba(66, 153, 225, 0.5);
 
-    --btn-microsoft-bg: #3182ce;
-    --btn-microsoft-hover: #2b6cb0;
+    --btn-microsoft-bg: #2563eb;
+    --btn-microsoft-hover: #1d4ed8;
     --btn-secondary-bg: #2d3748;
     --btn-secondary-hover: #1a202c;
 }
@@ -60,10 +60,10 @@
     --border-color: #2d4a6f;
     --focus-ring: rgba(99, 179, 237, 0.5);
 
-    --btn-microsoft-bg: #4299e1;
-    --btn-microsoft-hover: #3182ce;
-    --btn-secondary-bg: #4a5568;
-    --btn-secondary-hover: #718096;
+    --btn-microsoft-bg: #3b82f6;
+    --btn-microsoft-hover: #2563eb;
+    --btn-secondary-bg: #64748b;
+    --btn-secondary-hover: #94a3b8;
 }
 
 /* ==========================================
@@ -77,12 +77,12 @@
     --text-primary: #f7fafc;
     --text-secondary: #a0aec0;
     --border-color: #4a5568;
-    --focus-ring: rgba(99, 179, 237, 0.4);
+    --focus-ring: rgba(99, 179, 237, 0.5);
 
-    --btn-microsoft-bg: #2b88d8;
-    --btn-microsoft-hover: #0078D4;
-    --btn-secondary-bg: #5a6778;
-    --btn-secondary-hover: #6b7a8f;
+    --btn-microsoft-bg: #3b82f6;
+    --btn-microsoft-hover: #2563eb;
+    --btn-secondary-bg: #64748b;
+    --btn-secondary-hover: #94a3b8;
 }
 
 /* ==========================================
@@ -172,12 +172,12 @@
     --text-primary: #1a202c;
     --text-secondary: #4a5568;
     --border-color: #e2e8f0;
-    --focus-ring: rgba(245, 158, 11, 0.45);
+    --focus-ring: rgba(180, 83, 9, 0.5);
 
-    --btn-microsoft-bg: #d97706;
-    --btn-microsoft-hover: #b45309;
-    --btn-secondary-bg: #92400e;
-    --btn-secondary-hover: #7c2d12;
+    --btn-microsoft-bg: #b45309;
+    --btn-microsoft-hover: #92400e;
+    --btn-secondary-bg: #78350f;
+    --btn-secondary-hover: #5c2508;
 }
 
 /* ==========================================
@@ -210,11 +210,11 @@
     --text-primary: #1a202c;
     --text-secondary: #4a5568;
     --border-color: #e2e8f0;
-    --focus-ring: rgba(234, 88, 12, 0.4);
+    --focus-ring: rgba(154, 52, 18, 0.5);
 
-    --btn-microsoft-bg: #c2410c;
-    --btn-microsoft-hover: #9a3412;
-    --btn-secondary-bg: #7c2d12;
+    --btn-microsoft-bg: #9a3412;
+    --btn-microsoft-hover: #7c2d12;
+    --btn-secondary-bg: #6b2510;
     --btn-secondary-hover: #5c1d0d;
 }
 
@@ -229,7 +229,7 @@
     --text-primary: #1a202c;
     --text-secondary: #718096;
     --border-color: #e2e8f0;
-    --focus-ring: rgba(66, 153, 225, 0.3);
+    --focus-ring: rgba(66, 153, 225, 0.5);
 
     --btn-microsoft-bg: #0078D4;
     --btn-microsoft-hover: #005A9E;
@@ -267,12 +267,12 @@
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
     --border-color: #334155;
-    --focus-ring: rgba(56, 189, 248, 0.4);
+    --focus-ring: rgba(56, 189, 248, 0.5);
 
     --btn-microsoft-bg: #3b82f6;
     --btn-microsoft-hover: #2563eb;
-    --btn-secondary-bg: #334155;
-    --btn-secondary-hover: #475569;
+    --btn-secondary-bg: #64748b;
+    --btn-secondary-hover: #94a3b8;
 }
 
 /* ==========================================
@@ -343,12 +343,12 @@
     --text-primary: #365314;
     --text-secondary: #4d7c0f;
     --border-color: #e2e8f0;
-    --focus-ring: rgba(132, 204, 22, 0.4);
+    --focus-ring: rgba(63, 98, 18, 0.5);
 
-    --btn-microsoft-bg: #65a30d;
-    --btn-microsoft-hover: #4d7c0f;
-    --btn-secondary-bg: #3f6212;
-    --btn-secondary-hover: #365314;
+    --btn-microsoft-bg: #4d7c0f;
+    --btn-microsoft-hover: #3f6212;
+    --btn-secondary-bg: #365314;
+    --btn-secondary-hover: #2d4410;
 }
 
 /* ==========================================
