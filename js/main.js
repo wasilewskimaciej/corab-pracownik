@@ -71,8 +71,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const LIGHT_THEME = 'silver';
     const DARK_THEME = 'navy-dark';
 
-    // Odczytaj zapisany stan
-    let toggleState = localStorage.getItem('toggleState') || 'light';
+    // Odczytaj zapisany stan lub wykryj systemowy
+    const savedState = localStorage.getItem('toggleState');
+    let toggleState;
+    if (savedState) {
+        toggleState = savedState;
+    } else {
+        toggleState = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
     const currentTheme = toggleState === 'light' ? LIGHT_THEME : DARK_THEME;
     root.setAttribute('data-theme', currentTheme);
 
