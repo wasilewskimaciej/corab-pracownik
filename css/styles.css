@@ -278,39 +278,9 @@
     opacity: 1;
 }
 
-/* Theme mode selector (sun/moon buttons) */
-.theme-mode-selector {
-    display: flex;
-    gap: 0.5rem;
-    padding-top: 0.5rem;
-    border-top: 1px solid var(--border-color);
-    width: 100%;
-    justify-content: center;
-}
-
-.mode-btn {
-    background: var(--container-bg);
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: all 0.2s ease;
-}
-
-.mode-btn:hover {
-    background: var(--border-color);
-    transform: scale(1.05);
-}
-
-.mode-btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px var(--focus-ring);
-}
-
 /* Theme Toggle Button (produkcja) */
 .theme-toggle {
-    position: fixed;
+    position: absolute;
     top: 1rem;
     right: 1rem;
     background: var(--container-bg);
@@ -319,7 +289,7 @@
     width: 48px;
     height: 48px;
     cursor: pointer;
-    display: none; /* Ukryte podczas testowania */
+    display: flex; /* Zawsze widoczny */
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
@@ -346,10 +316,7 @@
     display: var(--dark-icon-display);
 }
 
-/* Gdy theme picker jest usunięty, pokaż toggle */
-body:not(:has(.theme-picker)) .theme-toggle {
-    display: flex;
-}
+/* Toggle zawsze widoczny - reguła nie potrzebna już */
 
 /* ==========================================
    Animations
@@ -626,8 +593,8 @@ body {
 
     /* Theme picker responsive */
     .theme-picker {
-        position: fixed;
-        top: 0.5rem;
+        position: absolute;
+        top: 3.5rem;
         right: 0.5rem;
         padding: 0.75rem;
         max-width: 200px;
@@ -704,12 +671,9 @@ body {
         font-size: 0.6rem;
     }
 
-    .mode-btn {
-        font-size: 1rem;
-        padding: 0.4rem 0.8rem;
-    }
-
     .theme-toggle {
+        top: 0.5rem;
+        right: 0.5rem;
         width: 40px;
         height: 40px;
         font-size: 1.3rem;

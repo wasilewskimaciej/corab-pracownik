@@ -85,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // THEME PICKER (wersja testowa - do usunięcia)
     // ==========================================
     const themeButtons = document.querySelectorAll('.theme-btn');
-    const modeButtons = document.querySelectorAll('.mode-btn');
 
     // Ustaw zapisany motyw
     if (currentSelectedTheme) {
@@ -98,6 +97,18 @@ document.addEventListener('DOMContentLoaded', function() {
         themeButtons.forEach(btn => {
             btn.classList.toggle('active', btn.dataset.theme === currentSelectedTheme);
         });
+    }
+
+    // Funkcja aktualizacji widoczności ikon toggle button
+    function updateToggleIcon() {
+        const toggleState = localStorage.getItem('toggleState') || 'light';
+        if (toggleState === 'light') {
+            root.style.setProperty('--light-icon-display', 'inline');
+            root.style.setProperty('--dark-icon-display', 'none');
+        } else {
+            root.style.setProperty('--light-icon-display', 'none');
+            root.style.setProperty('--dark-icon-display', 'inline');
+        }
     }
 
     // Obsługa kliknięć w przyciski motywów (preview)
@@ -124,51 +135,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Obsługa przycisków sun/moon (ustawianie domyślnych)
-    modeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const action = this.dataset.action;
-            const activeTheme = currentSelectedTheme;
-
-            if (action === 'set-light-theme') {
-                lightTheme = activeTheme;
-                localStorage.setItem('lightTheme', activeTheme);
-                alert(`Motyw "${activeTheme}" ustawiony jako JASNY (☀️)\n\nBędzie używany po kliknięciu przycisku słońca.`);
-                console.log('Light theme ustawiony na:', activeTheme);
-            } else if (action === 'set-dark-theme') {
-                darkTheme = activeTheme;
-                localStorage.setItem('darkTheme', activeTheme);
-                alert(`Motyw "${activeTheme}" ustawiony jako CIEMNY (🌙)\n\nBędzie używany po kliknięciu przycisku księżyca.`);
-                console.log('Dark theme ustawiony na:', activeTheme);
-            }
-        });
-    });
-
     // ==========================================
     // THEME TOGGLE (produkcja - po usunięciu pickera)
     // ==========================================
     const themeToggle = document.getElementById('theme-toggle');
 
+    // Stan przycisku toggle (niezależny od motywu)
+    let toggleState = localStorage.getItem('toggleState') || 'light'; // 'light' = słońce, 'dark' = księżyc
+
+    // Ustaw początkowy stan ikony
+    updateToggleIcon();
+
     if (themeToggle) {
         themeToggle.addEventListener('click', function() {
-            // Przełącz między light i dark theme
-            const currentTheme = root.getAttribute('data-theme') || 'light';
-            const isDark = [darkTheme, 'dark', 'navy-dark'].includes(currentTheme);
+            // Przełącz tylko ikonę (bez zmiany motywu)
+            toggleState = toggleState === 'light' ? 'dark' : 'light';
+            localStorage.setItem('toggleState', toggleState);
+            updateToggleIcon();
 
-            const newTheme = isDark ? lightTheme : darkTheme;
-
-            // Ustaw nowy motyw
-            if (newTheme === 'light') {
-                root.removeAttribute('data-theme');
-            } else {
-                root.setAttribute('data-theme', newTheme);
-            }
-
-            // Zapisz
-            localStorage.setItem('theme', newTheme);
-            currentSelectedTheme = newTheme;
-
-            console.log('Motyw przełączony na:', newTheme);
+            console.log('Przycisk toggle zmieniony na:', toggleState === 'light' ? '☀️ słońce' : '🌙 księżyc');
         });
     }
 
