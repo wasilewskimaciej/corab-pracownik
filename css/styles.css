@@ -143,6 +143,82 @@
 }
 
 /* ==========================================
+   Theme: Emerald (Szmaragdowy)
+   ========================================== */
+:root[data-theme="emerald"] {
+    --bg-gradient-start: #0f3d2e;
+    --bg-gradient-end: #1f6f54;
+    --container-bg: #ffffff;
+    --container-shadow: rgba(0, 0, 0, 0.25);
+    --text-primary: #1a202c;
+    --text-secondary: #4a5568;
+    --border-color: #e2e8f0;
+    --focus-ring: rgba(16, 185, 129, 0.4);
+
+    --btn-microsoft-bg: #15803d;
+    --btn-microsoft-hover: #166534;
+    --btn-secondary-bg: #065f46;
+    --btn-secondary-hover: #064e3b;
+}
+
+/* ==========================================
+   Theme: Amber (Bursztynowy)
+   ========================================== */
+:root[data-theme="amber"] {
+    --bg-gradient-start: #7c2d12;
+    --bg-gradient-end: #b45309;
+    --container-bg: #ffffff;
+    --container-shadow: rgba(0, 0, 0, 0.25);
+    --text-primary: #1a202c;
+    --text-secondary: #4a5568;
+    --border-color: #e2e8f0;
+    --focus-ring: rgba(245, 158, 11, 0.45);
+
+    --btn-microsoft-bg: #d97706;
+    --btn-microsoft-hover: #b45309;
+    --btn-secondary-bg: #92400e;
+    --btn-secondary-hover: #7c2d12;
+}
+
+/* ==========================================
+   Theme: Plum (Sliwkowy)
+   ========================================== */
+:root[data-theme="plum"] {
+    --bg-gradient-start: #3b0a45;
+    --bg-gradient-end: #5b1464;
+    --container-bg: #ffffff;
+    --container-shadow: rgba(0, 0, 0, 0.25);
+    --text-primary: #1a202c;
+    --text-secondary: #4a5568;
+    --border-color: #e2e8f0;
+    --focus-ring: rgba(168, 85, 247, 0.4);
+
+    --btn-microsoft-bg: #7c3aed;
+    --btn-microsoft-hover: #6d28d9;
+    --btn-secondary-bg: #4c1d95;
+    --btn-secondary-hover: #3b0764;
+}
+
+/* ==========================================
+   Theme: Terra (Terakota)
+   ========================================== */
+:root[data-theme="terra"] {
+    --bg-gradient-start: #4a1d14;
+    --bg-gradient-end: #8b3d2b;
+    --container-bg: #ffffff;
+    --container-shadow: rgba(0, 0, 0, 0.25);
+    --text-primary: #1a202c;
+    --text-secondary: #4a5568;
+    --border-color: #e2e8f0;
+    --focus-ring: rgba(234, 88, 12, 0.4);
+
+    --btn-microsoft-bg: #c2410c;
+    --btn-microsoft-hover: #9a3412;
+    --btn-secondary-bg: #7c2d12;
+    --btn-secondary-hover: #5c1d0d;
+}
+
+/* ==========================================
    Theme: White Clean (Biały minimalistyczny)
    ========================================== */
 :root[data-theme="white"] {
@@ -251,6 +327,22 @@
     background: linear-gradient(135deg, #234e52, #285e61);
 }
 
+.theme-btn[data-theme="emerald"] {
+    background: linear-gradient(135deg, #0f3d2e, #1f6f54);
+}
+
+.theme-btn[data-theme="amber"] {
+    background: linear-gradient(135deg, #7c2d12, #b45309);
+}
+
+.theme-btn[data-theme="plum"] {
+    background: linear-gradient(135deg, #3b0a45, #5b1464);
+}
+
+.theme-btn[data-theme="terra"] {
+    background: linear-gradient(135deg, #4a1d14, #8b3d2b);
+}
+
 .theme-btn[data-theme="white"] {
     background: linear-gradient(135deg, #ffffff, #f7fafc);
     border-color: #e2e8f0;
@@ -260,7 +352,7 @@
 .theme-btn::after {
     content: attr(title);
     position: absolute;
-    bottom: -24px;
+    top: -28px;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.8);
