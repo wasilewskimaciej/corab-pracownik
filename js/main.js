@@ -31,12 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
         btnMicrosoft.addEventListener('click', function(event) {
             event.preventDefault();
 
-            // Sprawdź czy URL jest zdefiniowany
             if (URL_MICROSOFT) {
-                console.log('Przekierowanie do portalu Microsoft: ' + URL_MICROSOFT);
                 window.location.href = URL_MICROSOFT;
             } else {
-                console.error('URL_MICROSOFT nie jest zdefiniowany!');
                 alert('Błąd konfiguracji. Skontaktuj się z administratorem IT.');
             }
         });
@@ -47,14 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
         btnNonMicrosoft.addEventListener('click', function(event) {
             event.preventDefault();
 
-            // Sprawdź czy URL jest zdefiniowany
             if (URL_NON_MICROSOFT) {
-                console.log('Przekierowanie do portalu (bez MS): ' + URL_NON_MICROSOFT);
                 window.location.href = URL_NON_MICROSOFT;
             } else {
-                // URL jeszcze nie skonfigurowany - pokaż komunikat
                 alert('URL dla pracowników bez konta Microsoft nie został jeszcze skonfigurowany.\n\nSkontaktuj się z działem IT, aby uzyskać link dostępu.');
-                console.warn('URL_NON_MICROSOFT nie jest zdefiniowany. Edytuj plik js/main.js aby dodać URL.');
             }
         });
     }
@@ -70,34 +63,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ==========================================
-    // THEME SYSTEM (picker testowy + toggle produkcyjny)
+    // THEME TOGGLE (silver / abyss)
     // ==========================================
     const root = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
 
-    // Zapisane motywy dla light/dark mode
-    let lightTheme = localStorage.getItem('lightTheme') || 'silver';
-    let darkTheme = localStorage.getItem('darkTheme') || 'abyss';
+    const LIGHT_THEME = 'silver';
+    const DARK_THEME = 'abyss';
 
-    // Obecny wybrany motyw (dla pickera)
-    let currentSelectedTheme = localStorage.getItem('theme') || lightTheme;
+    // Odczytaj zapisany stan
+    let toggleState = localStorage.getItem('toggleState') || 'light';
+    const currentTheme = toggleState === 'light' ? LIGHT_THEME : DARK_THEME;
+    root.setAttribute('data-theme', currentTheme);
 
-    // ==========================================
-    // THEME PICKER (wersja testowa - do usunięcia)
-    // ==========================================
-    const themeButtons = document.querySelectorAll('.theme-btn');
-
-    // Ustaw zapisany motyw
-    if (currentSelectedTheme) {
-        root.setAttribute('data-theme', currentSelectedTheme);
-        // Zaznacz odpowiedni przycisk
-        themeButtons.forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.theme === currentSelectedTheme);
-        });
-    }
-
-    // Funkcja aktualizacji widoczności ikon toggle button
+    // Ustaw widoczność ikon
     function updateToggleIcon() {
-        const toggleState = localStorage.getItem('toggleState') || 'light';
         if (toggleState === 'light') {
             root.style.setProperty('--light-icon-display', 'inline');
             root.style.setProperty('--dark-icon-display', 'none');
@@ -107,74 +87,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Obsługa kliknięć w przyciski motywów (preview)
-    themeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const theme = this.dataset.theme;
-            currentSelectedTheme = theme;
-
-            // Ustaw motyw
-            if (theme === 'light') {
-                root.removeAttribute('data-theme');
-            } else {
-                root.setAttribute('data-theme', theme);
-            }
-
-            // Zapisz jako aktualny
-            localStorage.setItem('theme', theme);
-
-            // Zaktualizuj aktywny przycisk
-            themeButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-
-            console.log('Preview motywu:', theme);
-        });
-    });
-
-    // ==========================================
-    // THEME TOGGLE (produkcja - po usunięciu pickera)
-    // ==========================================
-    const themeToggle = document.getElementById('theme-toggle');
-
-    // Stan przycisku toggle (niezależny od motywu)
-    let toggleState = localStorage.getItem('toggleState') || 'light'; // 'light' = słońce, 'dark' = księżyc
-
-    // Ustaw początkowy stan ikony
     updateToggleIcon();
 
     if (themeToggle) {
         themeToggle.addEventListener('click', function() {
-            // Przełącz stan i motyw
             toggleState = toggleState === 'light' ? 'dark' : 'light';
             localStorage.setItem('toggleState', toggleState);
 
-            // Zmień motyw na odpowiedni dla light/dark mode
-            const newTheme = toggleState === 'light' ? lightTheme : darkTheme;
-            currentSelectedTheme = newTheme;
-            localStorage.setItem('theme', newTheme);
-
+            const newTheme = toggleState === 'light' ? LIGHT_THEME : DARK_THEME;
             root.setAttribute('data-theme', newTheme);
 
             updateToggleIcon();
-
-            // Zaktualizuj aktywny przycisk w pickerze (jeśli istnieje)
-            themeButtons.forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.theme === newTheme);
-            });
-
-            console.log('Przełączono na:', toggleState === 'light' ? `☀️ ${lightTheme}` : `🌙 ${darkTheme}`);
         });
     }
-
-    // Log inicjalizacji (można usunąć w produkcji)
-    console.log('Portal Pracownika Corab - JavaScript załadowany');
-    console.log('URL Microsoft:', URL_MICROSOFT ? 'Skonfigurowany ✓' : 'Brak ✗');
-    console.log('URL Non-Microsoft:', URL_NON_MICROSOFT ? 'Skonfigurowany ✓' : 'Brak ✗');
 });
-
-// ==========================================
-// INSTRUKCJE DLA ADMINISTRATORA
-// ==========================================
 
 /*
 INSTRUKCJA AKTUALIZACJI URL:
@@ -189,16 +115,4 @@ INSTRUKCJA AKTUALIZACJI URL:
    git add js/main.js
    git commit -m "Update: Dodano URL dla pracowników bez MS"
    git push origin main
-
-   Strona automatycznie zaktualizuje się w ciągu 1-2 minut.
-
-3. Jeśli używasz Azure Portal/CLI:
-   - Zapisz plik
-   - Zip folder c:\pracownikcorab
-   - Upload przez Azure Portal lub użyj: az staticwebapp upload
-
-4. Testowanie:
-   - Otwórz stronę w przeglądarce
-   - Otwórz Developer Tools (F12) → Console
-   - Kliknij przycisk - sprawdź czy przekierowanie działa
 */

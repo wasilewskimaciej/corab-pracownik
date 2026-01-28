@@ -29,216 +29,7 @@
 }
 
 /* ==========================================
-   Theme: Navy (Granatowy)
-   ========================================== */
-:root[data-theme="navy"] {
-    --bg-gradient-start: #1a365d;
-    --bg-gradient-end: #2c5282;
-    --container-bg: #ffffff;
-    --container-shadow: rgba(0, 0, 0, 0.3);
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --border-color: #cbd5e0;
-    --focus-ring: rgba(66, 153, 225, 0.5);
-
-    --btn-microsoft-bg: #2563eb;
-    --btn-microsoft-hover: #1d4ed8;
-    --btn-secondary-bg: #2d3748;
-    --btn-secondary-hover: #1a202c;
-}
-
-/* ==========================================
-   Theme: Navy Dark (Granatowy ciemny)
-   ========================================== */
-:root[data-theme="navy-dark"] {
-    --bg-gradient-start: #0d1b2a;
-    --bg-gradient-end: #1b3a5f;
-    --container-bg: #1e3a5f;
-    --container-shadow: rgba(0, 0, 0, 0.5);
-    --text-primary: #f7fafc;
-    --text-secondary: #a0aec0;
-    --border-color: #2d4a6f;
-    --focus-ring: rgba(99, 179, 237, 0.5);
-
-    --btn-microsoft-bg: #3b82f6;
-    --btn-microsoft-hover: #2563eb;
-    --btn-secondary-bg: #64748b;
-    --btn-secondary-hover: #94a3b8;
-}
-
-/* ==========================================
-   Theme: Dark (Ciemny)
-   ========================================== */
-:root[data-theme="dark"] {
-    --bg-gradient-start: #1a202c;
-    --bg-gradient-end: #2d3748;
-    --container-bg: #2d3748;
-    --container-shadow: rgba(0, 0, 0, 0.4);
-    --text-primary: #f7fafc;
-    --text-secondary: #a0aec0;
-    --border-color: #4a5568;
-    --focus-ring: rgba(99, 179, 237, 0.5);
-
-    --btn-microsoft-bg: #3b82f6;
-    --btn-microsoft-hover: #2563eb;
-    --btn-secondary-bg: #64748b;
-    --btn-secondary-hover: #94a3b8;
-}
-
-/* ==========================================
-   Theme: Burgundy (Bordowy - pasuje do logo Corab)
-   ========================================== */
-:root[data-theme="burgundy"] {
-    --bg-gradient-start: #4a1c2b;
-    --bg-gradient-end: #6b2c3e;
-    --container-bg: #ffffff;
-    --container-shadow: rgba(0, 0, 0, 0.3);
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --border-color: #e2e8f0;
-    --focus-ring: rgba(200, 50, 80, 0.4);
-
-    --btn-microsoft-bg: #0078D4;
-    --btn-microsoft-hover: #005A9E;
-    --btn-secondary-bg: #742a3a;
-    --btn-secondary-hover: #5a1f2c;
-}
-
-/* ==========================================
-   Theme: Corab Red (Czerwony Corab)
-   ========================================== */
-:root[data-theme="corab-red"] {
-    --bg-gradient-start: #c41e3a;
-    --bg-gradient-end: #a01830;
-    --container-bg: #ffffff;
-    --container-shadow: rgba(0, 0, 0, 0.25);
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --border-color: #e2e8f0;
-    --focus-ring: rgba(196, 30, 58, 0.4);
-
-    --btn-microsoft-bg: #0078D4;
-    --btn-microsoft-hover: #005A9E;
-    --btn-secondary-bg: #2d3748;
-    --btn-secondary-hover: #1a202c;
-}
-
-/* ==========================================
-   Theme: Teal (Turkusowy)
-   ========================================== */
-:root[data-theme="teal"] {
-    --bg-gradient-start: #234e52;
-    --bg-gradient-end: #285e61;
-    --container-bg: #ffffff;
-    --container-shadow: rgba(0, 0, 0, 0.25);
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --border-color: #e2e8f0;
-    --focus-ring: rgba(56, 178, 172, 0.4);
-
-    --btn-microsoft-bg: #0078D4;
-    --btn-microsoft-hover: #005A9E;
-    --btn-secondary-bg: #2c7a7b;
-    --btn-secondary-hover: #285e61;
-}
-
-/* ==========================================
-   Theme: Emerald (Szmaragdowy)
-   ========================================== */
-:root[data-theme="emerald"] {
-    --bg-gradient-start: #0f3d2e;
-    --bg-gradient-end: #1f6f54;
-    --container-bg: #ffffff;
-    --container-shadow: rgba(0, 0, 0, 0.25);
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --border-color: #e2e8f0;
-    --focus-ring: rgba(16, 185, 129, 0.4);
-
-    --btn-microsoft-bg: #15803d;
-    --btn-microsoft-hover: #166534;
-    --btn-secondary-bg: #065f46;
-    --btn-secondary-hover: #064e3b;
-}
-
-/* ==========================================
-   Theme: Amber (Bursztynowy)
-   ========================================== */
-:root[data-theme="amber"] {
-    --bg-gradient-start: #7c2d12;
-    --bg-gradient-end: #b45309;
-    --container-bg: #ffffff;
-    --container-shadow: rgba(0, 0, 0, 0.25);
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --border-color: #e2e8f0;
-    --focus-ring: rgba(180, 83, 9, 0.5);
-
-    --btn-microsoft-bg: #b45309;
-    --btn-microsoft-hover: #92400e;
-    --btn-secondary-bg: #78350f;
-    --btn-secondary-hover: #5c2508;
-}
-
-/* ==========================================
-   Theme: Plum (Sliwkowy)
-   ========================================== */
-:root[data-theme="plum"] {
-    --bg-gradient-start: #3b0a45;
-    --bg-gradient-end: #5b1464;
-    --container-bg: #ffffff;
-    --container-shadow: rgba(0, 0, 0, 0.25);
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --border-color: #e2e8f0;
-    --focus-ring: rgba(168, 85, 247, 0.4);
-
-    --btn-microsoft-bg: #7c3aed;
-    --btn-microsoft-hover: #6d28d9;
-    --btn-secondary-bg: #4c1d95;
-    --btn-secondary-hover: #3b0764;
-}
-
-/* ==========================================
-   Theme: Terra (Terakota)
-   ========================================== */
-:root[data-theme="terra"] {
-    --bg-gradient-start: #4a1d14;
-    --bg-gradient-end: #8b3d2b;
-    --container-bg: #ffffff;
-    --container-shadow: rgba(0, 0, 0, 0.25);
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --border-color: #e2e8f0;
-    --focus-ring: rgba(154, 52, 18, 0.5);
-
-    --btn-microsoft-bg: #9a3412;
-    --btn-microsoft-hover: #7c2d12;
-    --btn-secondary-bg: #6b2510;
-    --btn-secondary-hover: #5c1d0d;
-}
-
-/* ==========================================
-   Theme: White Clean (Biały minimalistyczny)
-   ========================================== */
-:root[data-theme="white"] {
-    --bg-gradient-start: #ffffff;
-    --bg-gradient-end: #f7fafc;
-    --container-bg: #ffffff;
-    --container-shadow: rgba(0, 0, 0, 0.08);
-    --text-primary: #1a202c;
-    --text-secondary: #718096;
-    --border-color: #e2e8f0;
-    --focus-ring: rgba(66, 153, 225, 0.5);
-
-    --btn-microsoft-bg: #0078D4;
-    --btn-microsoft-hover: #005A9E;
-    --btn-secondary-bg: #4a5568;
-    --btn-secondary-hover: #2d3748;
-}
-
-/* ==========================================
-   Theme: Silver (Srebrny - Biznesowy)
+   Theme: Silver (Srebrny - Biznesowy) - Light Mode
    ========================================== */
 :root[data-theme="silver"] {
     --bg-gradient-start: #f3f4f6;
@@ -257,7 +48,7 @@
 }
 
 /* ==========================================
-   Theme: Abyss (Głębia - Nowoczesny Ciemny)
+   Theme: Abyss (Głębia - Nowoczesny) - Dark Mode
    ========================================== */
 :root[data-theme="abyss"] {
     --bg-gradient-start: #0f172a;
@@ -276,240 +67,8 @@
 }
 
 /* ==========================================
-   Theme: Lavender (Lawendowy)
+   Theme Toggle Button
    ========================================== */
-:root[data-theme="lavender"] {
-    --bg-gradient-start: #e9d5ff;
-    --bg-gradient-end: #c084fc;
-    --container-bg: #ffffff;
-    --container-shadow: rgba(0, 0, 0, 0.25);
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --border-color: #e2e8f0;
-    --focus-ring: rgba(192, 132, 252, 0.4);
-
-    --btn-microsoft-bg: #9333ea;
-    --btn-microsoft-hover: #7e22ce;
-    --btn-secondary-bg: #6b21a8;
-    --btn-secondary-hover: #581c87;
-}
-
-/* ==========================================
-   Theme: Sky (Błękitny)
-   ========================================== */
-:root[data-theme="sky"] {
-    --bg-gradient-start: #e0f2fe;
-    --bg-gradient-end: #bae6fd;
-    --container-bg: #ffffff;
-    --container-shadow: rgba(0, 0, 0, 0.25);
-    --text-primary: #0c4a6e;
-    --text-secondary: #0369a1;
-    --border-color: #e2e8f0;
-    --focus-ring: rgba(14, 165, 233, 0.4);
-
-    --btn-microsoft-bg: #0284c7;
-    --btn-microsoft-hover: #0369a1;
-    --btn-secondary-bg: #0c4a6e;
-    --btn-secondary-hover: #075985;
-}
-
-/* ==========================================
-   Theme: Rose (Różany)
-   ========================================== */
-:root[data-theme="rose"] {
-    --bg-gradient-start: #ffe4e6;
-    --bg-gradient-end: #fecdd3;
-    --container-bg: #ffffff;
-    --container-shadow: rgba(0, 0, 0, 0.25);
-    --text-primary: #881337;
-    --text-secondary: #9f1239;
-    --border-color: #e2e8f0;
-    --focus-ring: rgba(251, 113, 133, 0.4);
-
-    --btn-microsoft-bg: #e11d48;
-    --btn-microsoft-hover: #be123c;
-    --btn-secondary-bg: #9f1239;
-    --btn-secondary-hover: #881337;
-}
-
-/* ==========================================
-   Theme: Lime (Limonkowy)
-   ========================================== */
-:root[data-theme="lime"] {
-    --bg-gradient-start: #ecfccb;
-    --bg-gradient-end: #d9f99d;
-    --container-bg: #ffffff;
-    --container-shadow: rgba(0, 0, 0, 0.25);
-    --text-primary: #365314;
-    --text-secondary: #4d7c0f;
-    --border-color: #e2e8f0;
-    --focus-ring: rgba(63, 98, 18, 0.5);
-
-    --btn-microsoft-bg: #4d7c0f;
-    --btn-microsoft-hover: #3f6212;
-    --btn-secondary-bg: #365314;
-    --btn-secondary-hover: #2d4410;
-}
-
-/* ==========================================
-   Theme Picker Styles (testowanie - usunąć przed produkcją)
-   ========================================== */
-.theme-picker {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.75rem;
-    z-index: 1000;
-    background: var(--container-bg);
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px var(--container-shadow);
-    border: 1px solid var(--border-color);
-}
-
-.theme-picker-label {
-    font-size: 0.7rem;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.25rem;
-}
-
-.theme-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    justify-content: flex-end;
-    max-width: 200px;
-}
-
-.theme-btn {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.theme-btn:hover {
-    transform: scale(1.15);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-}
-
-.theme-btn.active {
-    border-color: #fff;
-    box-shadow: 0 0 0 2px var(--text-primary), 0 3px 8px rgba(0, 0, 0, 0.3);
-}
-
-.theme-btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px var(--focus-ring);
-}
-
-/* Theme button colors */
-.theme-btn[data-theme="light"] {
-    background: linear-gradient(135deg, #f0f4f8, #e0e7ef);
-}
-
-.theme-btn[data-theme="navy"] {
-    background: linear-gradient(135deg, #1a365d, #2c5282);
-}
-
-.theme-btn[data-theme="navy-dark"] {
-    background: linear-gradient(135deg, #0d1b2a, #1b3a5f);
-}
-
-.theme-btn[data-theme="dark"] {
-    background: linear-gradient(135deg, #1a202c, #2d3748);
-}
-
-.theme-btn[data-theme="burgundy"] {
-    background: linear-gradient(135deg, #4a1c2b, #6b2c3e);
-}
-
-.theme-btn[data-theme="corab-red"] {
-    background: linear-gradient(135deg, #c41e3a, #a01830);
-}
-
-.theme-btn[data-theme="teal"] {
-    background: linear-gradient(135deg, #234e52, #285e61);
-}
-
-.theme-btn[data-theme="emerald"] {
-    background: linear-gradient(135deg, #0f3d2e, #1f6f54);
-}
-
-.theme-btn[data-theme="amber"] {
-    background: linear-gradient(135deg, #7c2d12, #b45309);
-}
-
-.theme-btn[data-theme="plum"] {
-    background: linear-gradient(135deg, #3b0a45, #5b1464);
-}
-
-.theme-btn[data-theme="terra"] {
-    background: linear-gradient(135deg, #4a1d14, #8b3d2b);
-}
-
-.theme-btn[data-theme="white"] {
-    background: linear-gradient(135deg, #ffffff, #f7fafc);
-    border-color: #e2e8f0;
-}
-
-.theme-btn[data-theme="lavender"] {
-    background: linear-gradient(135deg, #e9d5ff, #c084fc);
-}
-
-.theme-btn[data-theme="sky"] {
-    background: linear-gradient(135deg, #e0f2fe, #bae6fd);
-}
-
-.theme-btn[data-theme="rose"] {
-    background: linear-gradient(135deg, #ffe4e6, #fecdd3);
-}
-
-.theme-btn[data-theme="lime"] {
-    background: linear-gradient(135deg, #ecfccb, #d9f99d);
-}
-
-.theme-btn[data-theme="silver"] {
-    background: linear-gradient(135deg, #f3f4f6, #d1d5db);
-}
-
-.theme-btn[data-theme="abyss"] {
-    background: linear-gradient(135deg, #1e293b, #0f172a);
-    border-color: #475569;
-}
-
-/* Tooltip for theme names */
-.theme-btn::after {
-    content: attr(title);
-    position: absolute;
-    top: -28px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.65rem;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-}
-
-.theme-btn:hover::after {
-    opacity: 1;
-}
-
-/* Theme Toggle Button (produkcja) */
 .theme-toggle {
     position: absolute;
     top: 1rem;
@@ -521,7 +80,6 @@
     height: 48px;
     cursor: pointer;
     display: flex;
-    /* Zawsze widoczny */
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
@@ -547,8 +105,6 @@
 .theme-icon-dark {
     display: var(--dark-icon-display);
 }
-
-/* Toggle zawsze widoczny - reguła nie potrzebna już */
 
 /* ==========================================
    Animations
@@ -599,6 +155,7 @@ body {
    Container
    ========================================== */
 .container {
+    position: relative;
     width: 100%;
     max-width: 600px;
     background: var(--container-bg);
@@ -624,14 +181,7 @@ body {
     animation: fadeInUp 0.6s ease-out;
 }
 
-/* Invert logo colors in dark mode (red stays visible) */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .logo {
-        filter: brightness(1.1);
-    }
-}
-
-:root[data-theme="dark"] .logo {
+:root[data-theme="abyss"] .logo {
     filter: brightness(1.1);
 }
 
@@ -774,11 +324,6 @@ body {
     transition: color 0.3s ease;
 }
 
-/* Position container relative for theme picker */
-.container {
-    position: relative;
-}
-
 /* ==========================================
    Responsive Design
    ========================================== */
@@ -822,25 +367,6 @@ body {
 
     .btn-description {
         font-size: 0.8rem;
-    }
-
-    /* Theme picker responsive */
-    .theme-picker {
-        position: absolute;
-        top: 3.5rem;
-        right: 0.5rem;
-        padding: 0.75rem;
-        max-width: 200px;
-    }
-
-    .theme-options {
-        justify-content: center;
-        max-width: 100%;
-    }
-
-    .theme-btn {
-        width: 32px;
-        height: 32px;
     }
 
     .theme-toggle {
@@ -887,21 +413,6 @@ body {
     .btn {
         padding: 1rem 1rem;
         min-height: 80px;
-    }
-
-    /* Theme picker mobile */
-    .theme-picker {
-        padding: 0.5rem;
-        max-width: 180px;
-    }
-
-    .theme-btn {
-        width: 26px;
-        height: 26px;
-    }
-
-    .theme-picker-label {
-        font-size: 0.6rem;
     }
 
     .theme-toggle {
