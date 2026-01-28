@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="icon" type="image/png" href="img/favicon-white.png">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <main class="container">
         <!-- Theme Picker for testing - DO USUNIĘCIA PO WYBORZE KOLORYSTYKI -->
@@ -26,6 +28,12 @@
                 <button class="theme-btn" data-theme="amber" data-mode="light" title="Bursztynowy"></button>
                 <button class="theme-btn" data-theme="plum" data-mode="light" title="Sliwkowy"></button>
                 <button class="theme-btn" data-theme="terra" data-mode="light" title="Terakota"></button>
+                <button class="theme-btn" data-theme="lavender" data-mode="light" title="Lawendowy"></button>
+                <button class="theme-btn" data-theme="sky" data-mode="light" title="Błękitny"></button>
+                <button class="theme-btn" data-theme="rose" data-mode="light" title="Różany"></button>
+                <button class="theme-btn" data-theme="lime" data-mode="light" title="Limonkowy"></button>
+                <button class="theme-btn" data-theme="silver" data-mode="light" title="Srebrny (Biznesowy)"></button>
+                <button class="theme-btn" data-theme="abyss" data-mode="dark" title="Głębia (Nowoczesny)"></button>
             </div>
         </div>
 
@@ -43,17 +51,14 @@
 
         <section class="buttons-section">
             <!-- Przycisk dla pracowników z kontem Microsoft -->
-            <a href="#"
-               id="btn-microsoft"
-               class="btn btn-microsoft"
-               role="button"
-               aria-label="Zaloguj się z kontem Microsoft">
+            <a href="#" id="btn-microsoft" class="btn btn-microsoft" role="button"
+                aria-label="Zaloguj się z kontem Microsoft">
                 <div class="btn-content">
                     <svg class="btn-icon" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="1" y="1" width="9" height="9" fill="#f25022"/>
-                        <rect x="11" y="1" width="9" height="9" fill="#7fba00"/>
-                        <rect x="1" y="11" width="9" height="9" fill="#00a4ef"/>
-                        <rect x="11" y="11" width="9" height="9" fill="#ffb900"/>
+                        <rect x="1" y="1" width="9" height="9" fill="#f25022" />
+                        <rect x="11" y="1" width="9" height="9" fill="#7fba00" />
+                        <rect x="1" y="11" width="9" height="9" fill="#00a4ef" />
+                        <rect x="11" y="11" width="9" height="9" fill="#ffb900" />
                     </svg>
                     <div class="btn-text">
                         <div class="btn-title">Pracownik z kontem Microsoft</div>
@@ -64,14 +69,12 @@
 
             <!-- Przycisk dla pracowników bez konta Microsoft -->
             <!-- TODO: Uzupełnić URL po otrzymaniu od administratora -->
-            <a href="#"
-               id="btn-non-microsoft"
-               class="btn btn-secondary"
-               role="button"
-               aria-label="Zaloguj się bez konta Microsoft">
+            <a href="#" id="btn-non-microsoft" class="btn btn-secondary" role="button"
+                aria-label="Zaloguj się bez konta Microsoft">
                 <div class="btn-content">
                     <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        <path
+                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                     </svg>
                     <div class="btn-text">
                         <div class="btn-title">Pracownik bez konta Microsoft</div>
@@ -88,4 +91,5 @@
 
     <script src="js/main.js"></script>
 </body>
+
 </html>

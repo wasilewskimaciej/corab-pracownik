@@ -238,6 +238,120 @@
 }
 
 /* ==========================================
+   Theme: Silver (Srebrny - Biznesowy)
+   ========================================== */
+:root[data-theme="silver"] {
+    --bg-gradient-start: #f3f4f6;
+    --bg-gradient-end: #d1d5db;
+    --container-bg: #ffffff;
+    --container-shadow: rgba(0, 0, 0, 0.15);
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --border-color: #d1d5db;
+    --focus-ring: rgba(107, 114, 128, 0.4);
+
+    --btn-microsoft-bg: #2563eb;
+    --btn-microsoft-hover: #1d4ed8;
+    --btn-secondary-bg: #4b5563;
+    --btn-secondary-hover: #374151;
+}
+
+/* ==========================================
+   Theme: Abyss (Głębia - Nowoczesny Ciemny)
+   ========================================== */
+:root[data-theme="abyss"] {
+    --bg-gradient-start: #0f172a;
+    --bg-gradient-end: #020617;
+    --container-bg: #1e293b;
+    --container-shadow: rgba(0, 0, 0, 0.6);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-color: #334155;
+    --focus-ring: rgba(56, 189, 248, 0.4);
+
+    --btn-microsoft-bg: #3b82f6;
+    --btn-microsoft-hover: #2563eb;
+    --btn-secondary-bg: #334155;
+    --btn-secondary-hover: #475569;
+}
+
+/* ==========================================
+   Theme: Lavender (Lawendowy)
+   ========================================== */
+:root[data-theme="lavender"] {
+    --bg-gradient-start: #e9d5ff;
+    --bg-gradient-end: #c084fc;
+    --container-bg: #ffffff;
+    --container-shadow: rgba(0, 0, 0, 0.25);
+    --text-primary: #1a202c;
+    --text-secondary: #4a5568;
+    --border-color: #e2e8f0;
+    --focus-ring: rgba(192, 132, 252, 0.4);
+
+    --btn-microsoft-bg: #9333ea;
+    --btn-microsoft-hover: #7e22ce;
+    --btn-secondary-bg: #6b21a8;
+    --btn-secondary-hover: #581c87;
+}
+
+/* ==========================================
+   Theme: Sky (Błękitny)
+   ========================================== */
+:root[data-theme="sky"] {
+    --bg-gradient-start: #e0f2fe;
+    --bg-gradient-end: #bae6fd;
+    --container-bg: #ffffff;
+    --container-shadow: rgba(0, 0, 0, 0.25);
+    --text-primary: #0c4a6e;
+    --text-secondary: #0369a1;
+    --border-color: #e2e8f0;
+    --focus-ring: rgba(14, 165, 233, 0.4);
+
+    --btn-microsoft-bg: #0284c7;
+    --btn-microsoft-hover: #0369a1;
+    --btn-secondary-bg: #0c4a6e;
+    --btn-secondary-hover: #075985;
+}
+
+/* ==========================================
+   Theme: Rose (Różany)
+   ========================================== */
+:root[data-theme="rose"] {
+    --bg-gradient-start: #ffe4e6;
+    --bg-gradient-end: #fecdd3;
+    --container-bg: #ffffff;
+    --container-shadow: rgba(0, 0, 0, 0.25);
+    --text-primary: #881337;
+    --text-secondary: #9f1239;
+    --border-color: #e2e8f0;
+    --focus-ring: rgba(251, 113, 133, 0.4);
+
+    --btn-microsoft-bg: #e11d48;
+    --btn-microsoft-hover: #be123c;
+    --btn-secondary-bg: #9f1239;
+    --btn-secondary-hover: #881337;
+}
+
+/* ==========================================
+   Theme: Lime (Limonkowy)
+   ========================================== */
+:root[data-theme="lime"] {
+    --bg-gradient-start: #ecfccb;
+    --bg-gradient-end: #d9f99d;
+    --container-bg: #ffffff;
+    --container-shadow: rgba(0, 0, 0, 0.25);
+    --text-primary: #365314;
+    --text-secondary: #4d7c0f;
+    --border-color: #e2e8f0;
+    --focus-ring: rgba(132, 204, 22, 0.4);
+
+    --btn-microsoft-bg: #65a30d;
+    --btn-microsoft-hover: #4d7c0f;
+    --btn-secondary-bg: #3f6212;
+    --btn-secondary-hover: #365314;
+}
+
+/* ==========================================
    Theme Picker Styles (testowanie - usunąć przed produkcją)
    ========================================== */
 .theme-picker {
@@ -348,6 +462,31 @@
     border-color: #e2e8f0;
 }
 
+.theme-btn[data-theme="lavender"] {
+    background: linear-gradient(135deg, #e9d5ff, #c084fc);
+}
+
+.theme-btn[data-theme="sky"] {
+    background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+}
+
+.theme-btn[data-theme="rose"] {
+    background: linear-gradient(135deg, #ffe4e6, #fecdd3);
+}
+
+.theme-btn[data-theme="lime"] {
+    background: linear-gradient(135deg, #ecfccb, #d9f99d);
+}
+
+.theme-btn[data-theme="silver"] {
+    background: linear-gradient(135deg, #f3f4f6, #d1d5db);
+}
+
+.theme-btn[data-theme="abyss"] {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border-color: #475569;
+}
+
 /* Tooltip for theme names */
 .theme-btn::after {
     content: attr(title);
@@ -381,7 +520,8 @@
     width: 48px;
     height: 48px;
     cursor: pointer;
-    display: flex; /* Zawsze widoczny */
+    display: flex;
+    /* Zawsze widoczny */
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
@@ -418,6 +558,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
