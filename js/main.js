@@ -69,6 +69,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // ==========================================
+    // THEME TOGGLE
+    // ==========================================
+    const themeToggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+
+    // Sprawdź zapisany motyw w localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        root.setAttribute('data-theme', savedTheme);
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = root.getAttribute('data-theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            let newTheme;
+            if (currentTheme === 'dark') {
+                newTheme = 'light';
+            } else if (currentTheme === 'light') {
+                newTheme = 'dark';
+            } else {
+                // Brak ustawienia - przełącz na przeciwny do systemowego
+                newTheme = prefersDark ? 'light' : 'dark';
+            }
+
+            root.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            console.log('Motyw zmieniony na:', newTheme);
+        });
+    }
+
     // Log inicjalizacji (można usunąć w produkcji)
     console.log('Portal Pracownika Corab - JavaScript załadowany');
     console.log('URL Microsoft:', URL_MICROSOFT ? 'Skonfigurowany ✓' : 'Brak ✗');
