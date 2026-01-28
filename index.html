@@ -9,22 +9,32 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <main class="container">
-        <!-- Theme Picker for testing - DO USUNIĘCIA PO WYBORZE KOLORYSTYKI -->
-        <div class="theme-picker">
-            <span class="theme-picker-label">Testuj motyw:</span>
-            <div class="theme-options">
-                <button class="theme-btn active" data-theme="light" title="Szary"></button>
-                <button class="theme-btn" data-theme="white" title="Biały"></button>
-                <button class="theme-btn" data-theme="navy" title="Granatowy"></button>
-                <button class="theme-btn" data-theme="navy-dark" title="Granat ciemny"></button>
-                <button class="theme-btn" data-theme="dark" title="Ciemny"></button>
-                <button class="theme-btn" data-theme="burgundy" title="Bordowy"></button>
-                <button class="theme-btn" data-theme="corab-red" title="Czerwony Corab"></button>
-                <button class="theme-btn" data-theme="teal" title="Turkusowy"></button>
-            </div>
+    <!-- Theme Picker for testing - DO USUNIĘCIA PO WYBORZE KOLORYSTYKI -->
+    <div class="theme-picker">
+        <span class="theme-picker-label">Testuj motywy:</span>
+        <div class="theme-options">
+            <button class="theme-btn active" data-theme="light" data-mode="light" title="Szary (jasny)"></button>
+            <button class="theme-btn" data-theme="white" data-mode="light" title="Biały"></button>
+            <button class="theme-btn" data-theme="navy" data-mode="light" title="Granatowy"></button>
+            <button class="theme-btn" data-theme="navy-dark" data-mode="dark" title="Granat ciemny"></button>
+            <button class="theme-btn" data-theme="dark" data-mode="dark" title="Ciemny"></button>
+            <button class="theme-btn" data-theme="burgundy" data-mode="light" title="Bordowy"></button>
+            <button class="theme-btn" data-theme="corab-red" data-mode="light" title="Czerwony Corab"></button>
+            <button class="theme-btn" data-theme="teal" data-mode="light" title="Turkusowy"></button>
         </div>
+        <div class="theme-mode-selector">
+            <button class="mode-btn" data-action="set-light-theme" title="Ustaw jako motyw jasny (słońce)">☀️</button>
+            <button class="mode-btn" data-action="set-dark-theme" title="Ustaw jako motyw ciemny (księżyc)">🌙</button>
+        </div>
+    </div>
 
+    <!-- Theme Toggle Button (produkcja) -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Przełącz motyw" title="Przełącz motyw">
+        <span class="theme-icon theme-icon-light">☀️</span>
+        <span class="theme-icon theme-icon-dark">🌙</span>
+    </button>
+
+    <main class="container">
         <header class="header">
             <img src="img/logo-corab.png" alt="Corab" class="logo">
             <h1 class="title">Portal Pracownika</h1>

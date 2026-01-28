@@ -70,25 +70,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ==========================================
-    // THEME PICKER (wersja testowa)
+    // THEME SYSTEM (picker testowy + toggle produkcyjny)
     // ==========================================
-    const themeButtons = document.querySelectorAll('.theme-btn');
     const root = document.documentElement;
 
-    // Sprawdź zapisany motyw w localStorage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        root.setAttribute('data-theme', savedTheme);
+    // Zapisane motywy dla light/dark mode
+    let lightTheme = localStorage.getItem('lightTheme') || 'light';
+    let darkTheme = localStorage.getItem('darkTheme') || 'dark';
+
+    // Obecny wybrany motyw (dla pickera)
+    let currentSelectedTheme = localStorage.getItem('theme') || lightTheme;
+
+    // ==========================================
+    // THEME PICKER (wersja testowa - do usunięcia)
+    // ==========================================
+    const themeButtons = document.querySelectorAll('.theme-btn');
+    const modeButtons = document.querySelectorAll('.mode-btn');
+
+    // Ustaw zapisany motyw
+    if (currentSelectedTheme) {
+        if (currentSelectedTheme === 'light') {
+            root.removeAttribute('data-theme');
+        } else {
+            root.setAttribute('data-theme', currentSelectedTheme);
+        }
         // Zaznacz odpowiedni przycisk
         themeButtons.forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.theme === savedTheme);
+            btn.classList.toggle('active', btn.dataset.theme === currentSelectedTheme);
         });
     }
 
-    // Obsługa kliknięć w przyciski motywów
+    // Obsługa kliknięć w przyciski motywów (preview)
     themeButtons.forEach(button => {
         button.addEventListener('click', function() {
             const theme = this.dataset.theme;
+            currentSelectedTheme = theme;
 
             // Ustaw motyw
             if (theme === 'light') {
@@ -97,16 +113,64 @@ document.addEventListener('DOMContentLoaded', function() {
                 root.setAttribute('data-theme', theme);
             }
 
-            // Zapisz w localStorage
+            // Zapisz jako aktualny
             localStorage.setItem('theme', theme);
 
             // Zaktualizuj aktywny przycisk
             themeButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
 
-            console.log('Motyw zmieniony na:', theme);
+            console.log('Preview motywu:', theme);
         });
     });
+
+    // Obsługa przycisków sun/moon (ustawianie domyślnych)
+    modeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const action = this.dataset.action;
+            const activeTheme = currentSelectedTheme;
+
+            if (action === 'set-light-theme') {
+                lightTheme = activeTheme;
+                localStorage.setItem('lightTheme', activeTheme);
+                alert(`Motyw "${activeTheme}" ustawiony jako JASNY (☀️)\n\nBędzie używany po kliknięciu przycisku słońca.`);
+                console.log('Light theme ustawiony na:', activeTheme);
+            } else if (action === 'set-dark-theme') {
+                darkTheme = activeTheme;
+                localStorage.setItem('darkTheme', activeTheme);
+                alert(`Motyw "${activeTheme}" ustawiony jako CIEMNY (🌙)\n\nBędzie używany po kliknięciu przycisku księżyca.`);
+                console.log('Dark theme ustawiony na:', activeTheme);
+            }
+        });
+    });
+
+    // ==========================================
+    // THEME TOGGLE (produkcja - po usunięciu pickera)
+    // ==========================================
+    const themeToggle = document.getElementById('theme-toggle');
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            // Przełącz między light i dark theme
+            const currentTheme = root.getAttribute('data-theme') || 'light';
+            const isDark = [darkTheme, 'dark', 'navy-dark'].includes(currentTheme);
+
+            const newTheme = isDark ? lightTheme : darkTheme;
+
+            // Ustaw nowy motyw
+            if (newTheme === 'light') {
+                root.removeAttribute('data-theme');
+            } else {
+                root.setAttribute('data-theme', newTheme);
+            }
+
+            // Zapisz
+            localStorage.setItem('theme', newTheme);
+            currentSelectedTheme = newTheme;
+
+            console.log('Motyw przełączony na:', newTheme);
+        });
+    }
 
     // Log inicjalizacji (można usunąć w produkcji)
     console.log('Portal Pracownika Corab - JavaScript załadowany');
