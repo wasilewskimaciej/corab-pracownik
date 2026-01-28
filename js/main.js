@@ -88,11 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Ustaw zapisany motyw
     if (currentSelectedTheme) {
-        if (currentSelectedTheme === 'light') {
-            root.removeAttribute('data-theme');
-        } else {
-            root.setAttribute('data-theme', currentSelectedTheme);
-        }
+        root.setAttribute('data-theme', currentSelectedTheme);
         // Zaznacz odpowiedni przycisk
         themeButtons.forEach(btn => {
             btn.classList.toggle('active', btn.dataset.theme === currentSelectedTheme);
@@ -157,11 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
             currentSelectedTheme = newTheme;
             localStorage.setItem('theme', newTheme);
 
-            if (newTheme === 'light') {
-                root.removeAttribute('data-theme');
-            } else {
-                root.setAttribute('data-theme', newTheme);
-            }
+            root.setAttribute('data-theme', newTheme);
 
             updateToggleIcon();
 
